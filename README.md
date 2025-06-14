@@ -58,7 +58,7 @@ A sleek, accessible form with dark/light mode toggle and smooth animations
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Web][product-web]](https://example.com)
 
 
 This **Interactive Registration Form** transforms the traditional sign-up process into an engaging user experience. Originally developed as a FreeCodeCamp project, I've enhanced it with:
