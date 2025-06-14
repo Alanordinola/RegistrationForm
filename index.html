@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Custom Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+</head>
+<body>
+  <div class="theme-toggle">
+    <button id="theme-btn">🌙 Dark Mode</button>
+  </div>
+  <div class="container">
+    <header>
+      <h1>Join Us Today! 🚀</h1>
+      <p>Please fill out this form to get started</p>
+    </header>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
+      <fieldset>
+        <legend>Basic Info</legend>
+        <label for="first-name">
+          <span>First Name</span>
+          <input id="first-name" name="first-name" type="text" required placeholder="John" />
+        </label>
+        <label for="last-name">
+          <span>Last Name</span>
+          <input id="last-name" name="last-name" type="text" required placeholder="Doe" />
+        </label>
+        <label for="email">
+          <span>Email</span>
+          <input id="email" name="email" type="email" required placeholder="john@example.com" />
+        </label>
+        <label for="new-password">
+          <span>Password</span>
+          <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required placeholder="At least 8 chars" />
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Account Type</legend>
+        <div class="radio-group">
+          <label for="personal-account">
+            <input id="personal-account" type="radio" name="account-type" class="inline" checked />
+            <span>Personal</span>
+          </label>
+          <label for="business-account">
+            <input id="business-account" type="radio" name="account-type" class="inline" />
+            <span>Business</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Additional Info</legend>
+        <label for="profile-picture">
+          <span>Profile Picture</span>
+          <input id="profile-picture" type="file" name="file" />
+        </label>
+        <label for="age">
+          <span>Age</span>
+          <input id="age" type="number" name="age" min="13" max="120" placeholder="18" />
+        </label>
+        <label for="referrer">
+          <span>How did you hear about us?</span>
+          <select id="referrer" name="referrer">
+            <option value="">(Select one)</option>
+            <option value="1">freeCodeCamp News</option>
+            <option value="2">YouTube</option>
+            <option value="3">Forums</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+        <label for="bio">
+          <span>Bio</span>
+          <textarea id="bio" name="bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+        </label>
+      </fieldset>
+
+      <label for="terms-and-conditions">
+        <input id="terms-and-conditions" type="checkbox" required class="inline"/>
+        I accept the <a href="#">terms & conditions</a>
+      </label>
+
+      <button type="submit" class="submit-btn">Submit →</button>
+    </form>
+  </div>
+
+  <script>
+    // Dark/Light Mode Toggle
+    const themeBtn = document.getElementById('theme-btn');
+    const body = document.body;
+
+    // Check user preference
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      themeBtn.textContent = '☀️ Light Mode';
+    }
+
+    themeBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      themeBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
